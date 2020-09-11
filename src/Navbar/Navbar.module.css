@@ -1,0 +1,27 @@
+.Container {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgreen;
+}
+
+.Logo {
+  float: left;
+  height: 70px;
+  width: 70px;
+  padding: 5px;
+}
+
+.Nav {
+  width: 100%;
+  float: right;
+}
+
+.NavItems {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;  
+  padding: 0px;
+  margin: 0px;
+}
