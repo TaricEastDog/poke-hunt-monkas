@@ -1,0 +1,8 @@
+.Container {
+  display: grid;
+  justify-items: center;
+}
+
+.PokeImg {
+  justify-content: center;
+}
