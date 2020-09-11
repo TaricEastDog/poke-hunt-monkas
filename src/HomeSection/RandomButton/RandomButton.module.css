@@ -1,0 +1,15 @@
+.RandomButton {
+  color:white;
+  background-color: lightgreen;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 12px;
+  font-weight: 900;
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.114);
+}
+
+.RandomButton:hover {
+  background-color: limegreen;
+  cursor: pointer;
+
+}
