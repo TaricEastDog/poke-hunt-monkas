@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import RandomButton from './RandomButton/RandomButton'
+import FuncButton from './FuncButton/FuncButton'
 import ScreenArea from './ScreenArea/ScreenArea'
 import classes from './HomeSection.module.css'
 
@@ -11,7 +11,8 @@ class HomeSection extends Component {
     url: 'https://pokeapi.co/api/v2/pokemon/',
     pokeName: '',
     sprite: "Loading poke sprite",
-    pokeId: 50
+    pokeId: 50,
+    pokeList: []
   }
 
   componentDidMount() {
@@ -27,7 +28,7 @@ class HomeSection extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.pokeName !== this.state.pokeName) {
+    if (prevState !== this.state) {
       console.log('componentDidUpdate the state and is rendering new things')
     }
   } 
@@ -46,20 +47,30 @@ class HomeSection extends Component {
       })
   }
 
+  catchButtonHandler = () => {
+    this.setState({pokeList: [...this.state.pokeList, this.state.pokeId]})
+  }
+
   render () {
     return (
       <div className={classes.Container}>
-        <p>content of home section here</p>
+        <img src="https://fontmeme.com/permalink/200915/398089207f9b5502dc439f91e5967c69.png" alt="pokemon-font" border="0" />
         <ScreenArea 
           name={this.state.pokeName}
           id={this.state.pokeId}
           sprite={this.state.sprite}
         />
         <div className={classes.ButtonsContainer}>
-          <RandomButton randomButtonClicked={this.randomButtonClickHandler} />
-          <RandomButton randomButtonClicked={this.randomButtonClickHandler} />
-          <RandomButton randomButtonClicked={this.randomButtonClickHandler} />
+          <FuncButton buttonClicked={this.randomButtonClickHandler} btnName='Find a Poke' btnStyle='RandomButton' />
+          <FuncButton buttonClicked={this.catchButtonHandler} btnName='Catch a Poke' />
+          <FuncButton buttonClicked={this.randomButtonClickHandler} btnName='Feed a Poke' />
         </div>
+        <h5>Catched Poke IDs:</h5>
+        <ul>
+          {this.state.pokeList.map(poke => (
+            <li>#{`${poke}`.padStart(3, "0")}</li>
+          ))}
+        </ul>
       </div>
     )
   }
