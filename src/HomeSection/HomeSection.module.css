@@ -6,3 +6,10 @@
 .PokeImg {
   justify-content: center;
 }
+
+.ButtonsContainer {
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+  justify-content: space-evenly;
+}
