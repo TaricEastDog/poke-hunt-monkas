@@ -1,58 +1,31 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React from 'react'
 
-import RandomButton from './RandomButton/RandomButton'
+import FuncButton from './FuncButton/FuncButton'
+import ScreenArea from './ScreenArea/ScreenArea'
 import classes from './HomeSection.module.css'
 
-
-class HomeSection extends Component {
-  state = {
-    url: 'https://pokeapi.co/api/v2/pokemon/',
-    pokeName: '',
-    sprite: "Loading poke sprite"
-  }
-
-  componentDidMount() {
-    axios.get(this.state.url + 50)
-      .then(res => {        
-        this.setState({
-          pokeName: res.data.name,
-          sprite: res.data.sprites.front_default
-        })
-        console.log(res.data.sprites.front_default)
-      })
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.pokeName !== this.state.pokeName) {
-      console.log('componentDidUpdate the state and is rendering new things')
-    }
-  } 
-
-  randomButtonClickHandler = () => {
-    let rand = Math.random() * 151 + 1  
-    rand = Math.floor(rand)
-    axios.get(this.state.url + rand)
-      .then(res => {
-        this.setState({
-          pokeName: res.data.name,
-          sprite: res.data.sprites.front_default
-        })
-        console.log(res.data.sprites.front_default)
-      })
-  }
-
-  render () {
-    return (
-      <div className={classes.Container}>
-        <p>content of home section here</p>
-        <p>Name: {this.state.pokeName.charAt(0).toUpperCase() + this.state.pokeName.slice(1)}</p>
-        <img src={this.state.sprite} alt={this.state.pokeName} />
-        <RandomButton randomButtonClicked={this.randomButtonClickHandler} />
-      </div>
-    )
-  }
-
+const homeSection = (props) => {
+  return (
+    <div className={classes.Container}>
+    <img src="https://fontmeme.com/permalink/200915/398089207f9b5502dc439f91e5967c69.png" alt="pokemon-font" border="0" />
+    <ScreenArea 
+      name={props.pokeName}
+      id={props.pokeId}
+      sprite={props.sprite}
+    />
+    <div className={classes.ButtonsContainer}>
+      <FuncButton buttonClicked={props.randomButtonClickHandler} btnName='Find a Poke' btnStyle='RandomButton' />
+      <FuncButton buttonClicked={props.catchButtonClickHandler} btnName='Catch a Poke' />
+      <FuncButton buttonClicked={props.randomButtonClickHandler} btnName='Feed a Poke' />
+    </div>
+    <h5>Catched Poke IDs:</h5>
+    <ul>
+      {props.pokeList.map(poke => (
+        <li key={poke}>#{`${poke}`.padStart(3, "0")}</li>
+      ))}
+    </ul>
+  </div>
+  )
 }
 
-export default HomeSection
+export default homeSection

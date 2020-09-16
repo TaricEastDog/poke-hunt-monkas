@@ -1,0 +1,10 @@
+.Container {
+  display: grid;
+  justify-items: center;
+  border: solid 1px;
+  width: 100%
+}
+
+.PokeImg {
+  justify-content: center;
+}
