@@ -1,0 +1,59 @@
+.RandomButton {
+  color:white;
+  background-color: rgb(127, 224, 127);
+  border: none;
+  padding: 15px 32px;
+  border-radius: 12px;
+  font-weight: 900;
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.114);
+  transition: 0.5s;
+}
+
+.RandomButton:hover {
+  background-color: limegreen;
+  cursor: pointer;
+}
+
+.RandomButton:focus { 
+  outline-style: none; 
+}
+
+.CatchButton {
+  color:white;
+  background-color: salmon;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 12px;
+  font-weight: 900;
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.114);
+  transition: 0.5s;
+}
+
+.CatchButton:hover {
+  background-color: tomato;
+  cursor: pointer;
+}
+
+.CatchButton:focus { 
+  outline-style: none; 
+}
+
+.FeedButton {
+  color:white;
+  background-color: rgb(140, 169, 207);
+  border: none;
+  padding: 15px 32px;
+  border-radius: 12px;
+  font-weight: 900;
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.114);
+  transition: 0.5s;
+}
+
+.FeedButton:hover {
+  background-color: steelblue;
+  cursor: pointer;
+}
+
+.FeedButton:focus { 
+  outline-style: none; 
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RandomButton from './RandomButton/RandomButton'
+import FuncButton from './FuncButton/FuncButton'
 import ScreenArea from './ScreenArea/ScreenArea'
 import classes from './HomeSection.module.css'
 
