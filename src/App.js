@@ -5,6 +5,8 @@ import axios from 'axios'
 import Navbar from './Navbar/Navbar'
 import HomeSection from './HomeSection/HomeSection'
 import Collection from './Collection/Collection'
+import About from './About/About'
+import FAQ from './FAQ/FAQ'
 
 class App extends Component {
   state = {
@@ -13,7 +15,7 @@ class App extends Component {
     sprite: "Loading poke sprite",
     pokeId: 50,
     pokeList: [1, 2, 4, 6],
-    currentPage: 'collection'
+    currentPage: 'about'
   }
 
   navBarClickHandler = (nav) => {
@@ -70,8 +72,12 @@ class App extends Component {
 
     if (this.state.currentPage === 'home') {
       currentDisplay = homeSection
-    } else {
+    } else if (this.state.currentPage === 'collection') {
       currentDisplay = collection
+    } else if (this.state.currentPage === 'about') {
+      currentDisplay = <About />
+    } else {
+      currentDisplay = <FAQ />
     }
 
     return (

@@ -18,12 +18,6 @@ const homeSection = (props) => {
       <FuncButton buttonClicked={props.catchButtonClickHandler} btnName='Catch a Poke' />
       <FuncButton buttonClicked={props.randomButtonClickHandler} btnName='Feed a Poke' />
     </div>
-    <h5>Catched Poke IDs:</h5>
-    <ul>
-      {props.pokeList.map(poke => (
-        <li key={poke}>#{`${poke}`.padStart(3, "0")}</li>
-      ))}
-    </ul>
   </div>
   )
 }

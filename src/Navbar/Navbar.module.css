@@ -3,25 +3,34 @@
   display: flex;
   justify-content: space-between;
   background-color: lightgreen;
+  align-items: center;
 }
 
 .Logo {
   float: left;
-  height: 70px;
-  width: 70px;
-  padding: 5px;
+  height: 60px;
+  width: 60px;
+  margin-left: 5px;
 }
 
 .Nav {
-  width: 100%;
-  float: right;
+  flex-grow: 1;
+
 }
 
 .NavItems {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  height: 100%;  
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.NavItems li {
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+  font-weight: 800;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
