@@ -1,15 +1,43 @@
 import React from 'react'
+import { Parallax } from 'react-parallax'
 
 import classes from './About.module.css'
 
-const about = () => {
+const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum placerat augue id placerat. Nam lobortis, ante ac condimentum malesuada, dolor nulla egestas metus, vitae viverra tellus erat sed justo. Maecenas ac magna pulvinar, dapibus neque ac, ultricies elit. Suspendisse eu luctus dolor. Ut eleifend at leo ac luctus. Vivamus tempor tortor ut purus dapibus, gravida condimentum lectus hendrerit. Proin nec sodales leo. Mauris finibus fringilla maximus. Suspendisse bibendum facilisis massa id iaculis. Proin vitae ante dolor.'
+
+const about = (props) => {
   return (
-    <div className={classes.Container}>
-      <h2>Something about Poke Hunt monkaS</h2>
-      <p>description lorem ipsum hehexd</p>
-      <img src='https://lh3.googleusercontent.com/proxy/ybn5NH4XKjyAJWDqGVktKrAjptbH6KRIZcd9YjQJp7AjU2oI5QFeWPazltDVA2240v8fnD1rz39_oGVgBmuglu6HtJxXfTdYQIELSopyJeShrK9Utwv6rLBVW-cR' alt='Pikachu' />
-      <img src='https://lh3.googleusercontent.com/proxy/MCsASxdbG80dElGu4rBZRcYAnQh8Xi24uZMFOFmRO4CGI88BBZTmtTQiaB35PE_s3MHDjkeeNPE3JNoM8hrGp6TG0rzFwdGAsCW9onmnMRgOM04Scvs' alt='squirlte' />
-    </div>
+    <Parallax 
+      blur={2}
+      bgImage={props.bgImage}
+      bgImageAlt='background map'
+      strength={900}
+    >
+      <div className={classes.GridContainer}>
+        <div className={classes.GridItemDesc1}>
+          <h2>About Poke Hunt</h2>
+          <p>{loremIpsum}</p>
+        </div>
+        <div className={classes.GridItemImage1}>
+          <img 
+            src='http://www.pngall.com/wp-content/uploads/5/Pikachu-PNG-Image-File.png' 
+            alt='Pikachu' 
+            className={classes.PikachuImage} />
+        </div> 
+        <div className={classes.GridItemDesc2}>
+          <h2>Some more about it</h2>
+          <p>{loremIpsum}</p>
+        </div>
+        <div className={classes.GridItemImage2}>
+          <img 
+            src='https://www.pinclipart.com/picdir/big/570-5700657_collection-of-free-squirtle-transparent-character-pokemon-transparent.png' 
+            alt='Squirtle' 
+            className={classes.PikachuImage} />
+        </div> 
+      </div>      
+    </Parallax>
+
+
   )
 }
 

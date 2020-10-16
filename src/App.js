@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.css';
 import axios from 'axios'
 
 import Navbar from './Navbar/Navbar'
@@ -7,6 +6,7 @@ import HomeSection from './HomeSection/HomeSection'
 import Collection from './Collection/Collection'
 import About from './About/About'
 import FAQ from './FAQ/FAQ'
+import classes from './App.module.css';
 
 class App extends Component {
   state = {
@@ -14,8 +14,9 @@ class App extends Component {
     pokeName: '',
     sprite: "Loading poke sprite",
     pokeId: 50,
-    pokeList: [1, 2, 4, 6],
-    currentPage: 'about'
+    pokeList: [],
+    currentPage: 'home',
+    bgImage: 'https://www.wallpaperflare.com/static/905/635/699/pok%C3%A9mon-video-games-retro-games-pokemon-wallpaper.jpg'
   }
 
   navBarClickHandler = (nav) => {
@@ -75,17 +76,18 @@ class App extends Component {
     } else if (this.state.currentPage === 'collection') {
       currentDisplay = collection
     } else if (this.state.currentPage === 'about') {
-      currentDisplay = <About />
+      currentDisplay = <About bgImage={this.state.bgImage} />
     } else {
       currentDisplay = <FAQ />
     }
 
     return (
-      <div>
+      <div className={classes.App}>
         <Navbar navBarClickHandler={this.navBarClickHandler} />
-        {currentDisplay}
+          <div className={classes.Container}>
+          {currentDisplay}
+          </div>
       </div>
-
     )
   }
 }
