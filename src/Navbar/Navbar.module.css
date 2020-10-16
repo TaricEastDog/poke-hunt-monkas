@@ -4,6 +4,11 @@
   justify-content: space-between;
   background-color: lightgreen;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  opacity: 90%;
 }
 
 .Logo {
@@ -24,6 +29,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  user-select: none;
 }
 
 .NavItems li {
@@ -33,4 +39,14 @@
   padding: 0;
   font-weight: 800;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  transition: 0.5s;
+}
+
+.NavItems li:hover {
+  color: rgb(166, 240, 240);
+}
+
+.NavItems li:active {
+  color: black;
+  transition: none;
 }

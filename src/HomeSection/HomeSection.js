@@ -16,7 +16,7 @@ const homeSection = (props) => {
     <div className={classes.ButtonsContainer}>
       <FuncButton buttonClicked={props.randomButtonClickHandler} btnName='Find a Poke' btnStyle='RandomButton' />
       <FuncButton buttonClicked={props.catchButtonClickHandler} btnName='Catch a Poke' />
-      <FuncButton buttonClicked={props.randomButtonClickHandler} btnName='Feed a Poke' />
+      <FuncButton buttonClicked={props.feedButtonClickHander} btnName='Feed a Poke' />
     </div>
   </div>
   )
